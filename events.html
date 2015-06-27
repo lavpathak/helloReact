@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="bower_components/react/react.js"></script>
+    <script src="bower_components/react/JSXTransformer.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/jsx">
+      var Counter= React.createClass({
+        getInitialState: function() {
+          return {
+            count:0
+          }
+        },
+
+        incrementCount: function() {
+          this.setState({
+            count: this.state.count + 1
+          });
+        },
+
+        render: function() {
+          return(
+            <div class="my-component">
+              <h1>Count: {this.state.count}</h1>
+              <button type="button" onClick={this.incrementCount}>Increment</button>
+            </div>
+          );
+        }
+      });
+
+      React.render(<Counter/>,document.getElementById('example'));
+    </script>
+</body>
+</html
